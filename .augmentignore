@@ -1,0 +1,79 @@
+# ============================================================================
+# AUGMENT IGNORE - Exclude files from codebase indexing
+# Only index source code: app/, components/, lib/, and config files
+# ============================================================================
+
+# Dependencies - CRITICAL: Exclude node_modules entirely
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs and artifacts
+.next/
+out/
+build/
+dist/
+.turbo/
+
+# Package lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Images and media assets
+vibe_images/
+public/images/
+public/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Version control
+.git/
+.gitignore
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Cache files
+.eslintcache
+.stylelintcache
+.next-env.d.ts
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.pem
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
