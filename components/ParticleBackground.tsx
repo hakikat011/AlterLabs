@@ -19,9 +19,9 @@ export default function ParticleBackground() {
   const animationRef = useRef<number | undefined>(undefined)
 
   const colors = [
-    'rgba(0, 255, 255, 0.5)',   // Electric cyan
-    'rgba(138, 43, 226, 0.4)',  // Purple
-    'rgba(147, 112, 219, 0.4)', // Violet
+    'rgba(0, 255, 255, 0.15)',   // Subtle cyan
+    'rgba(138, 43, 226, 0.12)',  // Subtle purple
+    'rgba(147, 112, 219, 0.12)', // Subtle violet
   ]
 
   const initParticles = useCallback((width: number, height: number) => {
@@ -94,7 +94,7 @@ export default function ParticleBackground() {
           ctx.beginPath()
           ctx.moveTo(particle.x, particle.y)
           ctx.lineTo(other.x, other.y)
-          const opacity = (1 - distance / 100) * 0.15
+          const opacity = (1 - distance / 100) * 0.05
           ctx.strokeStyle = `rgba(0, 255, 255, ${opacity})`
           ctx.lineWidth = 0.5
           ctx.stroke()
@@ -144,7 +144,7 @@ export default function ParticleBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.3 }}
     />
   )
 }

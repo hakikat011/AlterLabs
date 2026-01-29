@@ -23,6 +23,7 @@ import dynamic from 'next/dynamic'
 
 // Dynamic imports for client-side only components
 const AnimatedLogo = dynamic(() => import('@/components/AnimatedLogo'), { ssr: false })
+const MathematicalLogo = dynamic(() => import('@/components/MathematicalLogo'), { ssr: false })
 const ParticleBackground = dynamic(() => import('@/components/ParticleBackground'), { ssr: false })
 
 export default function Home() {
@@ -51,11 +52,11 @@ export default function Home() {
       {/* Particle Background */}
       <ParticleBackground />
       
-      {/* Global mesh gradient overlay */}
-      <div className="fixed inset-0 mesh-gradient pointer-events-none z-0" />
+      {/* 3D Grid Background */}
+      <div className="fixed inset-0 grid-3d pointer-events-none z-0" />
       
-      {/* Geometric pattern overlay */}
-      <div className="fixed inset-0 geometric-pattern pointer-events-none z-0 opacity-50" />
+      {/* Subtle mesh gradient overlay */}
+      <div className="fixed inset-0 mesh-gradient pointer-events-none z-0 opacity-50" />
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass-strong">
@@ -101,18 +102,18 @@ export default function Home() {
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Animated background elements with parallax */}
+        {/* Animated background elements with parallax - More subtle */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
-          <div className="absolute top-1/4 left-1/6 w-72 md:w-[500px] h-72 md:h-[500px] bg-primary/15 rounded-full blur-[150px] animate-breathe" />
-          <div className="absolute bottom-1/4 right-1/6 w-72 md:w-[500px] h-72 md:h-[500px] bg-accent/15 rounded-full blur-[150px] animate-breathe" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 md:w-[700px] h-96 md:h-[700px] bg-secondary/10 rounded-full blur-[180px] animate-pulse-glow" />
+          <div className="absolute top-1/4 left-1/6 w-72 md:w-[500px] h-72 md:h-[500px] bg-primary/5 rounded-full blur-[150px] animate-breathe" />
+          <div className="absolute bottom-1/4 right-1/6 w-72 md:w-[500px] h-72 md:h-[500px] bg-accent/5 rounded-full blur-[150px] animate-breathe" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 md:w-[700px] h-96 md:h-[700px] bg-secondary/3 rounded-full blur-[180px] animate-pulse-glow" />
         </div>
 
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-20" style={{ transform: `translateY(${scrollY * 0.1}px)` }} />
+        {/* Minimal grid overlay */}
+        <div className="absolute inset-0 geometric-pattern opacity-30" style={{ transform: `translateY(${scrollY * 0.1}px)` }} />
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -123,37 +124,37 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-sm border border-primary/20">
                 <Sparkles className="w-4 h-4 text-primary animate-pulse" />
-                <span className="text-foreground/80 font-medium">Launching Soon for Indian Students</span>
+                <span className="text-foreground/80 font-medium">AI-Powered Learning • CBSE, ICSE, JEE, NEET Ready</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-                Learn Smarter with{' '}
-                <span className="gradient-text text-glow block mt-2">AI-Powered</span>{' '}
-                <span className="text-foreground/90">Education</span>
+                Master Your Syllabus with{' '}
+                <span className="gradient-text text-glow block mt-2">Adaptive AI Tutoring</span>{' '}
+                <span className="text-foreground/90">Tailored for Indian Students</span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Experience personalized learning that adapts to your unique style. 
-                AlterLabs uses cutting-edge AI to create customized study paths 
-                that help you achieve your academic goals faster.
+                AlterLabs delivers <span className="text-foreground/90 font-semibold">personalized learning paths</span> powered by advanced AI algorithms. 
+                Track your strengths across {' '}<span className="text-foreground/90">50+ skill dimensions</span>, access {' '}<span className="text-foreground/90">indexed knowledge graphs</span> connecting {' '}
+                <span className="text-foreground/90">10,000+ concepts</span>, and receive real-time feedback that adapts to your unique learning pace—all aligned with your board curriculum and competitive exam goals.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                 <Button variant="glow" size="xl" className="group shadow-lg shadow-primary/25">
-                  Join the Waitlist
+                  Start Free Trial
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </Button>
                 <Button variant="glass" size="xl" className="group">
                   <Play className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-                  Watch Demo
+                  See How It Works
                 </Button>
               </div>
 
               <div className="flex flex-wrap items-center gap-8 pt-6 justify-center lg:justify-start">
                 {[
-                  "Free to Start",
-                  "CBSE & State Boards", 
-                  "Competitive Exams"
+                  "Multi-Board Support: CBSE, ICSE, State",
+                  "JEE & NEET Preparation Modules", 
+                  "Real-Time AI Performance Analytics"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5">
                     <div className="w-5 h-5 rounded-full gradient-primary flex items-center justify-center">
@@ -165,12 +166,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right content - Animated Logo */}
+            {/* Right content - Mathematical Logo */}
             <div 
               className="relative order-first lg:order-last"
               style={{ transform: `translateY(${scrollY * -0.05}px)` }}
             >
-              <AnimatedLogo />
+              <MathematicalLogo />
             </div>
           </div>
         </div>
@@ -190,8 +191,8 @@ export default function Home() {
           className="absolute inset-0 pointer-events-none"
           style={{ transform: `translateY(${(scrollY - 800) * 0.1}px)` }}
         >
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[150px]" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[150px]" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/3 rounded-full blur-[150px]" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/3 rounded-full blur-[150px]" />
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -201,8 +202,8 @@ export default function Home() {
               Powered by <span className="gradient-text">Advanced AI</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Our intelligent platform understands how you learn and creates 
-              a personalized experience that evolves with you.
+              Our intelligent platform understands how you learn, what drives you, 
+              and creates a personalized experience that evolves with your journey.
             </p>
           </div>
 
@@ -210,33 +211,33 @@ export default function Home() {
             {[
               {
                 icon: Brain,
-                title: "Adaptive Learning",
-                description: "AI that understands your learning patterns and adjusts content difficulty in real-time."
+                title: "Personalized AI Learning",
+                description: "Advanced AI that adapts to your unique learning style, pace, and interests—creating a truly individualized educational journey."
               },
               {
                 icon: Target,
-                title: "Personalized Paths",
-                description: "Custom study plans based on your goals, whether it's board exams or competitive tests."
+                title: "Smart Performance Tracker",
+                description: "Go beyond standard metrics. Track growth across multiple dimensions including conceptual understanding, problem-solving speed, and critical thinking."
               },
               {
-                icon: Zap,
-                title: "Instant Feedback",
-                description: "Get immediate explanations and alternative approaches when you're stuck."
+                icon: Sparkles,
+                title: "Passion-Driven Learning",
+                description: "Learn through topics you love. Our AI connects curriculum to your interests, making education engaging and meaningful."
               },
               {
                 icon: TrendingUp,
-                title: "Progress Analytics",
-                description: "Track your improvement with detailed insights and performance predictions."
+                title: "Advanced Analytics",
+                description: "Deep insights into your learning patterns, strengths, and areas for growth with predictive performance modeling."
               },
               {
                 icon: BookOpen,
-                title: "Rich Content Library",
-                description: "Access thousands of questions, video lessons, and practice materials."
+                title: "Indexed Knowledge System",
+                description: "Intelligent content organization that maps relationships between concepts, enabling efficient learning and quick recall."
               },
               {
-                icon: Users,
-                title: "Collaborative Learning",
-                description: "Connect with peers, participate in study groups, and learn together."
+                icon: Zap,
+                title: "Real-Time Adaptation",
+                description: "Dynamic difficulty adjustment and instant feedback that keeps you in the optimal learning zone at all times."
               }
             ].map((feature, index) => (
               <Card 
@@ -258,7 +259,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <section id="how-it-works" className="py-24 md:py-36 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-elevated/30 via-transparent to-surface-elevated/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-elevated/10 via-transparent to-surface-elevated/10" />
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
@@ -275,18 +276,18 @@ export default function Home() {
             {[
               {
                 step: "01",
-                title: "Take Assessment",
-                description: "Complete a quick diagnostic test so our AI understands your current level and learning style."
+                title: "Discover Your Profile",
+                description: "Complete an AI-powered assessment that identifies your learning style, interests, strengths, and passions to create your unique learner profile."
               },
               {
                 step: "02",
-                title: "Get Your Plan",
-                description: "Receive a customized study plan tailored to your goals, timeline, and preferences."
+                title: "Get Personalized Insights",
+                description: "Access your custom dashboard with advanced analytics, performance tracking beyond standard metrics, and an indexed knowledge map."
               },
               {
                 step: "03",
-                title: "Learn & Grow",
-                description: "Study with adaptive content that gets smarter as you progress, ensuring optimal results."
+                title: "Learn & Excel",
+                description: "Follow your AI-curated learning path that adapts in real-time, connecting to your interests while ensuring mastery of core concepts."
               }
             ].map((item, index) => (
               <div key={index} className="relative group text-center md:text-left">
@@ -312,8 +313,8 @@ export default function Home() {
           className="absolute inset-0 pointer-events-none"
           style={{ transform: `translateY(${(scrollY - 2400) * 0.1}px)` }}
         >
-          <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[200px]" />
-          <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[150px]" />
+          <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-accent/3 rounded-full blur-[200px]" />
+          <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-secondary/3 rounded-full blur-[150px]" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -336,16 +337,16 @@ export default function Home() {
                 
                 {/* Floating stats */}
                 <div className="absolute top-10 right-0 glass rounded-xl px-4 py-3 animate-float" style={{ animationDelay: '0s' }}>
-                  <div className="text-2xl font-bold gradient-text">10L+</div>
-                  <div className="text-xs text-muted-foreground">Students</div>
+                  <div className="text-2xl font-bold gradient-text">15K+</div>
+                  <div className="text-xs text-muted-foreground">Active Learners</div>
                 </div>
                 <div className="absolute bottom-20 left-0 glass rounded-xl px-4 py-3 animate-float" style={{ animationDelay: '1s' }}>
-                  <div className="text-2xl font-bold gradient-text">98%</div>
-                  <div className="text-xs text-muted-foreground">Success Rate</div>
+                  <div className="text-2xl font-bold gradient-text">92%</div>
+                  <div className="text-xs text-muted-foreground">Avg. Score Boost</div>
                 </div>
                 <div className="absolute bottom-0 right-10 glass rounded-xl px-4 py-3 animate-float" style={{ animationDelay: '2s' }}>
                   <div className="text-2xl font-bold gradient-text">50K+</div>
-                  <div className="text-xs text-muted-foreground">Questions</div>
+                  <div className="text-xs text-muted-foreground">Practice Qs</div>
                 </div>
               </div>
             </div>
@@ -354,25 +355,26 @@ export default function Home() {
             <div className="space-y-8 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-sm border border-accent/20">
                 <GraduationCap className="w-4 h-4 text-accent" />
-                <span className="text-foreground/80 font-medium">Built for Indian Students</span>
+                <span className="text-foreground/90 font-medium">Trusted by 15,000+ Indian Students</span>
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                Your Success is Our{' '}
-                <span className="gradient-text">Mission</span>
+                Built for <span className="gradient-text">Excellence</span>{' '}
+                in Indian Education
               </h2>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you&apos;re preparing for CBSE, ICSE, state boards, JEE, NEET, 
-                or other competitive exams, AlterLabs is designed to help you excel.
+                From <span className="text-foreground/90 font-semibold">Class 6 through Class 12</span> across CBSE, ICSE, and major state boards, 
+                to comprehensive <span className="text-foreground/90 font-semibold">JEE Main, JEE Advanced, and NEET</span> preparation—AlterLabs provides 
+                curriculum-aligned AI tutoring with <span className="text-foreground/90">real-time doubt resolution</span> and predictive exam analytics.
               </p>
 
               <div className="space-y-5">
                 {[
-                  "Curriculum aligned with Indian education boards",
-                  "Expert-curated content for competitive exams",
-                  "Available in English and regional languages",
-                  "Affordable pricing for every student"
+                  "50,000+ practice questions across Mathematics, Physics, Chemistry, Biology",
+                  "Multi-dimensional tracking: Speed, Accuracy, Conceptual Depth, Application Ability",
+                  "Interactive knowledge graphs connecting 10,000+ NCERT and competitive exam concepts",
+                  "Personalized weak-area reinforcement with adaptive difficulty progression"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4 justify-center lg:justify-start group">
                     <div className="w-7 h-7 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -385,7 +387,7 @@ export default function Home() {
 
               <div className="pt-4">
                 <Button variant="glow" size="xl" className="group shadow-lg shadow-primary/25">
-                  Start Learning Free
+                  Explore Learning Paths
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </Button>
               </div>
@@ -397,7 +399,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 md:py-36 relative">
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] md:w-[1000px] h-[700px] md:h-[1000px] bg-primary/5 rounded-full blur-[200px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] md:w-[1000px] h-[700px] md:h-[1000px] bg-primary/2 rounded-full blur-[200px]" />
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -409,26 +411,27 @@ export default function Home() {
               
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-                  Ready to Transform Your{' '}
-                  <span className="gradient-text text-glow">Learning?</span>
+                  Accelerate Your Academic{' '}
+                  <span className="gradient-text text-glow">Success Journey</span>
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-                  Join thousands of students who are already experiencing the future 
-                  of education. Get early access and be part of the revolution.
+                  Join <span className="text-foreground/90 font-semibold">15,000+ students</span> already using AlterLabs to excel in their studies. 
+                  Get access to AI-powered tutoring, <span className="text-foreground/90">personalized study plans</span>, and 
+                  comprehensive performance analytics designed specifically for Indian curricula and competitive exams.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="glow" size="xl" className="group shadow-lg shadow-primary/25">
-                    Get Early Access
+                    Start 14-Day Free Trial
                     <Sparkles className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </Button>
                   <Button variant="outline" size="xl" className="border-border/50 hover:border-primary/50">
-                    Contact Us
+                    Schedule Demo
                   </Button>
                 </div>
 
                 <p className="mt-8 text-sm text-muted-foreground">
-                  No credit card required. Free trial for the first 1000 students.
+                  No credit card required • Cancel anytime • Full access to all features during trial
                 </p>
               </div>
             </div>
