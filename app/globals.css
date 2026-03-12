@@ -4,43 +4,54 @@
 
 @layer base {
   :root {
-    /* AlterLabs Dark Theme - Minimalist Dark Aesthetic */
-    --background: 220 15% 3%;
-    --foreground: 210 20% 95%;
+    /* AlterLabs Dark Theme - Premium Dark Aesthetic */
+    --background: 225 25% 2%;
+    --foreground: 210 25% 96%;
     
-    --card: 220 15% 6%;
-    --card-foreground: 210 20% 95%;
+    --card: 225 20% 5%;
+    --card-foreground: 210 25% 96%;
     
-    --popover: 220 15% 6%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 225 20% 5%;
+    --popover-foreground: 210 25% 96%;
     
-    /* Subtle Electric Cyan Primary */
-    --primary: 190 100% 50%;
-    --primary-foreground: 220 15% 3%;
+    /* Electric Cyan Primary - Warmer */
+    --primary: 185 100% 55%;
+    --primary-foreground: 225 25% 2%;
     
-    /* Muted Purple Secondary */
-    --secondary: 270 40% 50%;
-    --secondary-foreground: 210 20% 95%;
+    /* Rich Purple Secondary */
+    --secondary: 270 50% 55%;
+    --secondary-foreground: 210 25% 96%;
     
-    --muted: 220 12% 12%;
-    --muted-foreground: 215 15% 60%;
+    --muted: 225 15% 10%;
+    --muted-foreground: 215 20% 55%;
     
-    /* Subtle Accent - Violet */
-    --accent: 260 50% 55%;
-    --accent-foreground: 210 20% 95%;
+    /* Vibrant Accent - Violet */
+    --accent: 260 60% 60%;
+    --accent-foreground: 210 25% 96%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 20% 95%;
+    --destructive-foreground: 210 25% 96%;
     
-    --border: 220 15% 15%;
-    --input: 220 12% 12%;
-    --ring: 190 100% 50%;
+    --border: 225 20% 12%;
+    --input: 225 15% 10%;
+    --ring: 185 100% 55%;
     --radius: 0.75rem;
     
-    /* Custom AlterLabs tokens */
-    --glow-primary: 190 100% 50%;
-    --glow-secondary: 270 40% 50%;
-    --surface-elevated: 220 15% 8%;
+    /* Custom AlterLabs tokens - Enhanced */
+    --glow-primary: 185 100% 55%;
+    --glow-secondary: 270 50% 55%;
+    --glow-accent: 260 60% 60%;
+    --surface-elevated: 225 20% 7%;
+    
+    /* Depth layers for 3D effects */
+    --surface-1: 225 22% 4%;
+    --surface-2: 225 20% 6%;
+    --surface-3: 225 18% 8%;
+    
+    /* Neon glow intensities */
+    --neon-cyan: 185 100% 60%;
+    --neon-purple: 270 80% 65%;
+    --neon-violet: 260 70% 65%;
   }
 }
 
@@ -91,33 +102,85 @@
     mask-composite: exclude;
   }
   
-  /* Glow effects */
+  /* Enhanced Glow effects - Multi-layer */
   .glow-primary {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.15), 0 0 60px hsl(var(--primary) / 0.05);
+    box-shadow: 
+      0 0 20px hsl(var(--primary) / 0.2),
+      0 0 40px hsl(var(--primary) / 0.1),
+      0 0 80px hsl(var(--primary) / 0.05);
   }
   
   .glow-accent {
-    box-shadow: 0 0 30px hsl(var(--accent) / 0.15), 0 0 60px hsl(var(--accent) / 0.05);
+    box-shadow: 
+      0 0 20px hsl(var(--accent) / 0.2),
+      0 0 40px hsl(var(--accent) / 0.1),
+      0 0 80px hsl(var(--accent) / 0.05);
+  }
+  
+  .glow-intense {
+    box-shadow: 
+      0 0 10px hsl(var(--primary) / 0.4),
+      0 0 30px hsl(var(--primary) / 0.3),
+      0 0 60px hsl(var(--primary) / 0.2),
+      0 0 100px hsl(var(--primary) / 0.1);
+  }
+  
+  .glow-neon {
+    box-shadow: 
+      0 0 5px hsl(var(--neon-cyan) / 0.8),
+      0 0 20px hsl(var(--neon-cyan) / 0.4),
+      0 0 40px hsl(var(--neon-cyan) / 0.2),
+      inset 0 0 20px hsl(var(--neon-cyan) / 0.1);
   }
   
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+    text-shadow: 
+      0 0 10px hsl(var(--primary) / 0.3),
+      0 0 30px hsl(var(--primary) / 0.2),
+      0 0 50px hsl(var(--primary) / 0.1);
   }
   
-  /* Glass effect */
+  .text-glow-intense {
+    text-shadow: 
+      0 0 10px hsl(var(--primary) / 0.5),
+      0 0 30px hsl(var(--primary) / 0.4),
+      0 0 60px hsl(var(--primary) / 0.3),
+      0 0 100px hsl(var(--primary) / 0.2);
+  }
+  
+  /* Glass effect - Enhanced */
   .glass {
-    background: hsl(var(--card) / 0.5);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsl(var(--border) / 0.3);
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.4);
   }
   
   /* Enhanced Glass */
   .glass-strong {
-    background: hsl(var(--card) / 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--primary) / 0.08);
+    background: hsl(var(--card) / 0.75);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid hsl(var(--primary) / 0.1);
+    box-shadow: 
+      0 8px 32px hsl(var(--background) / 0.5),
+      inset 0 1px 0 hsl(var(--foreground) / 0.05);
+  }
+  
+  /* Premium Glass with depth */
+  .glass-premium {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card) / 0.8) 0%,
+      hsl(var(--card) / 0.6) 100%
+    );
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    border: 1px solid hsl(var(--primary) / 0.15);
+    box-shadow: 
+      0 8px 32px hsl(var(--background) / 0.6),
+      0 0 0 1px hsl(var(--foreground) / 0.03),
+      inset 0 1px 0 hsl(var(--foreground) / 0.08);
   }
   
   /* Mesh Gradient Background - Subtle */
@@ -261,13 +324,120 @@
     opacity: 0.4;
   }
   
-  /* Card hover lift */
+  /* Card hover lift - Enhanced with 3D */
   .card-hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    transform-style: preserve-3d;
   }
   
   .card-hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px hsl(var(--primary) / 0.15);
+    transform: translateY(-10px) rotateX(2deg);
+    box-shadow: 
+      0 25px 50px hsl(var(--primary) / 0.15),
+      0 10px 20px hsl(var(--background) / 0.5);
+  }
+  
+  /* 3D Perspective card */
+  .perspective-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .perspective-card-inner {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+  }
+  
+  .perspective-card:hover .perspective-card-inner {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+  }
+  
+  /* Animated gradient border */
+  .border-gradient-animated {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+  
+  .border-gradient-animated::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      var(--gradient-angle, 135deg),
+      hsl(var(--primary) / 0.6),
+      hsl(var(--accent) / 0.6),
+      hsl(var(--secondary) / 0.6),
+      hsl(var(--primary) / 0.6)
+    );
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: gradient-border-rotate 4s linear infinite;
+  }
+  
+  @keyframes gradient-border-rotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Shadow depth for elevation */
+  .shadow-depth {
+    box-shadow: 
+      0 2px 4px hsl(var(--background) / 0.3),
+      0 8px 16px hsl(var(--background) / 0.4),
+      0 16px 32px hsl(var(--background) / 0.3);
+  }
+  
+  .shadow-depth-lg {
+    box-shadow: 
+      0 4px 8px hsl(var(--background) / 0.3),
+      0 12px 24px hsl(var(--background) / 0.4),
+      0 24px 48px hsl(var(--background) / 0.3),
+      0 0 0 1px hsl(var(--border) / 0.5);
+  }
+  
+  /* Neon pulse animation */
+  @keyframes neon-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 5px hsl(var(--primary) / 0.5),
+        0 0 20px hsl(var(--primary) / 0.3),
+        0 0 40px hsl(var(--primary) / 0.2);
+    }
+    50% {
+      box-shadow: 
+        0 0 10px hsl(var(--primary) / 0.7),
+        0 0 30px hsl(var(--primary) / 0.5),
+        0 0 60px hsl(var(--primary) / 0.3);
+    }
+  }
+  
+  .animate-neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-pulse-glow,
+    .animate-gradient,
+    .animate-spin-slow,
+    .animate-orbit,
+    .animate-shimmer,
+    .animate-breathe,
+    .animate-neon-pulse {
+      animation: none;
+    }
+    
+    .card-hover-lift:hover,
+    .perspective-card:hover .perspective-card-inner {
+      transform: none;
+    }
   }
 }
